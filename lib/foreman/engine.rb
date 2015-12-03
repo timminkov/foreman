@@ -260,11 +260,7 @@ class Foreman::Engine
   # @returns [Fixnum] port  The port to use for this instance of this process
   #
   def port_for(process, instance, base=nil)
-    if base
-      base + (@processes.index(process.process) * 100) + (instance - 1)
-    else
-      base_port + (@processes.index(process) * 100) + (instance - 1)
-    end
+    base_port
   end
 
   # Get the base port for this foreman instance
